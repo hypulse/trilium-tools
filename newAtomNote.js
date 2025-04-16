@@ -6,7 +6,7 @@ api.addButtonToToolbar({
     const newAtomNoteId =
       await api.runAsyncOnBackendWithManualTransactionHandling(async () => {
         const atomRootNote = await api.getNoteWithLabel("AtomNotesRoot");
-        const today = new Date().toLocaleString();
+        const today = new Date().toLocaleString("ja-JP", { hour12: false });
 
         const { note } = await api.createNote(atomRootNote.noteId, today, "");
         note.setLabel("iconClass", "bx bx-atom", false);
