@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  trilium-backup:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trilium-backup
+    volumes:
+      - ~/trilium-backup:/backups
+    env_file:
+      - .env
